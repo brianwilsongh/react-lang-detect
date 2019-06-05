@@ -20,6 +20,7 @@ class HelloWorld extends React.Component {
       // console.log("gonna get the lang")
       var prediction = langid.rank(text)[0]
       console.log(langid.rank(text)[0])
+      console.log("probability: " + (1 - Math.exp(langid.rank(text)[0].logprob)))
       var display = this.refs["displayLang"]
       display.textContent = prediction.lang
       // const config = {
